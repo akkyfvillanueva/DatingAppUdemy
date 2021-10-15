@@ -21,7 +21,7 @@ namespace API.Controllers
         [HttpGet("auth")]
         public ActionResult<String> GetSecret()
         {
-            return "secret text";
+            return Unauthorized();
         }
 
         [HttpGet("not-found")]
@@ -31,7 +31,7 @@ namespace API.Controllers
 
             if (thing == null) return NotFound();
 
-            return Ok(thing);
+            return NotFound(thing);
         }
 
         [HttpGet("server-error")]
